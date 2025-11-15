@@ -1,0 +1,48 @@
+SmartServe AI - Environment Configuration Template
+==================================================
+
+Copy the values below and create a .env file in the root directory.
+
+# Application Settings
+NODE_ENV=production
+PORT=3000
+VITE_APP_TITLE=SmartServe AI
+VITE_APP_ID=your_manus_app_id_here
+
+# Database Configuration
+DATABASE_URL=mysql://username:password@localhost:3306/smartserve_ai
+
+# Authentication & Security
+JWT_SECRET=your_jwt_secret_key_here_min_32_chars
+OAUTH_SERVER_URL=https://api.manus.im
+VITE_OAUTH_PORTAL_URL=https://portal.manus.im
+
+# Owner Information
+OWNER_NAME=Your Name
+OWNER_OPEN_ID=your_open_id
+
+# Stripe Payment Configuration
+STRIPE_SECRET_KEY=sk_live_your_stripe_secret_key
+VITE_STRIPE_PUBLISHABLE_KEY=pk_live_your_stripe_public_key
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+
+# AI & LLM Configuration
+BUILT_IN_FORGE_API_URL=https://api.manus.im
+BUILT_IN_FORGE_API_KEY=your_forge_api_key
+VITE_FRONTEND_FORGE_API_URL=https://api.manus.im
+VITE_FRONTEND_FORGE_API_KEY=your_frontend_forge_api_key
+
+# Analytics Configuration
+VITE_ANALYTICS_ENDPOINT=https://analytics.manus.im
+VITE_ANALYTICS_WEBSITE_ID=your_website_id
+
+# Branding
+VITE_APP_LOGO=/logo.svg
+
+INSTRUCTIONS:
+=============
+1. Replace all "your_*" values with actual credentials
+2. For database, ensure MySQL is running and database exists
+3. For Stripe, use test keys for development, live keys for production
+4. Keep this file secure and never commit to version control
+5. Set appropriate file permissions: chmod 600 .env

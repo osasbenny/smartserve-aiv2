@@ -1,0 +1,46 @@
+{
+  "appName": "SmartServe AI",
+  "version": "1.0.0",
+  "nodeVersion": "18.0.0",
+  "description": "AI-Powered Chat Agent Platform",
+  "deployment": {
+    "type": "Node.js",
+    "port": 3000,
+    "startScript": "app.js",
+    "environment": "production",
+    "restartPolicy": "always"
+  },
+  "requirements": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0",
+    "database": "MySQL 5.7+",
+    "diskSpace": "500MB minimum"
+  },
+  "directories": {
+    "public": "./public",
+    "logs": "./logs",
+    "temp": "./tmp"
+  },
+  "environment_variables": {
+    "NODE_ENV": "production",
+    "PORT": "3000",
+    "DATABASE_URL": "mysql://user:password@localhost:3306/smartserve_ai",
+    "JWT_SECRET": "your_jwt_secret_here",
+    "VITE_APP_ID": "your_app_id",
+    "VITE_APP_TITLE": "SmartServe AI",
+    "STRIPE_SECRET_KEY": "sk_live_your_key",
+    "VITE_STRIPE_PUBLISHABLE_KEY": "pk_live_your_key",
+    "STRIPE_WEBHOOK_SECRET": "whsec_your_secret"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "build": "vite build && esbuild server/_core/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist"
+  },
+  "features": {
+    "https": true,
+    "gzip": true,
+    "caching": true,
+    "monitoring": true
+  }
+}
